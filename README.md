@@ -1,1 +1,1 @@
-!(wothimage.png)
+(wothimage.png)
