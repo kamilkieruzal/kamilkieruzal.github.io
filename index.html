@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- PODMIEŃ: tytuł i opis pokazują się w Google i przy udostępnianiu linku -->
   <title>War of the Heart – zespół metalowy</title>
   <meta name="description" content="War of the Heart – zespół metalowy z Polski. Muzyka, koncerty, kontakt i booking.">
 
@@ -15,7 +14,6 @@
   <meta property="og:url" content="https://www.waroftheheart.pl/">
   <meta name="theme-color" content="#0a0607">
 
-  <!-- Wrzuć plik favicon.png (np. 256×256) do katalogu głównego repo -->
   <link rel="icon" href="favicon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,12 +22,12 @@
 
   <style>
     :root {
-      --ink: #0a0607;      /* tło strony */
-      --panel: #1b0e10;    /* ciemniejsze pola */
-      --bone: #ece4d8;     /* tekst główny */
-      --ash: #9a8f85;      /* tekst drugorzędny */
-      --blood: #c0141c;    /* akcent */
-      --rust: #6e2a1f;     /* linie i obramowania */
+      --ink: #0a0607;
+      --panel: #1b0e10;
+      --bone: #ece4d8;
+      --ash: #9a8f85;
+      --blood: #c0141c;
+      --rust: #6e2a1f;
       --display: 'Big Shoulders Display', Impact, 'Arial Narrow', sans-serif;
       --body: 'Barlow', 'Segoe UI', Roboto, sans-serif;
       --wrap: 1080px;
@@ -47,7 +45,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* delikatne ziarno na całej stronie */
     body::before {
       content: "";
       position: fixed;
@@ -70,7 +67,6 @@
     }
     .skip:focus { left: 1rem; top: 1rem; }
 
-    /* ---------- nawigacja ---------- */
     .top {
       position: sticky; top: 0; z-index: 10;
       background: rgba(10, 6, 7, .92);
@@ -89,7 +85,6 @@
     .menu a { text-decoration: none; font-weight: 600; font-size: .95rem; }
     .menu a:hover { text-decoration: underline; text-decoration-color: var(--blood); text-underline-offset: .3em; text-decoration-thickness: 2px; }
 
-    /* ---------- hero ---------- */
     .hero {
       min-height: calc(100svh - 58px);
       display: grid; place-items: center; text-align: center;
@@ -122,7 +117,6 @@
     .btn.primary:hover { background: var(--bone); border-color: var(--bone); color: var(--ink); }
     .btn.small { font-size: 1.05rem; padding: .35rem 1rem; }
 
-    /* ---------- sekcje ---------- */
     section { padding: 4.5rem 0 5rem; border-top: 4px solid var(--bone); }
     section.dark { background: var(--panel); }
     h2 {
@@ -140,7 +134,6 @@
     .two { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
     @media (max-width: 760px) { .two { grid-template-columns: 1fr; gap: 2rem; } }
 
-    /* ---------- muzyka ---------- */
     .video { width: 100%; aspect-ratio: 16 / 9; border: 0; background: #000; }
     .stream { list-style: none; padding: 0; margin: 1.4rem 0 0; display: flex; flex-wrap: wrap; gap: .5rem 1.6rem; }
     .stream a {
@@ -150,7 +143,6 @@
     }
     .stream a:hover { color: var(--blood); }
 
-    /* ---------- koncerty (jak plakat) ---------- */
     .shows { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rust); }
     .shows li {
       display: grid; grid-template-columns: 7rem 1fr auto; gap: 1.5rem; align-items: center;
@@ -169,18 +161,15 @@
     }
     .noshows { padding: 2rem 0; color: var(--ash); }
 
-    /* ---------- zespół ---------- */
     .members { list-style: none; margin: 0; padding: 0; }
     .members li { padding: .7rem 0; border-bottom: 1px solid var(--rust); }
     .members .name { font-family: var(--display); font-weight: 800; font-size: 1.7rem; text-transform: uppercase; line-height: 1; }
     .members .role { color: var(--ash); }
 
-    /* ---------- galeria ---------- */
     .gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: .6rem; }
     .gallery img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; filter: grayscale(1) contrast(1.15); background: var(--panel); }
     @media (max-width: 760px) { .gallery { grid-template-columns: repeat(2, 1fr); } }
 
-    /* ---------- kontakt ---------- */
     .mail {
       font-family: var(--display); font-weight: 900;
       font-size: clamp(2.2rem, 7vw, 4.6rem); line-height: 1;
@@ -225,12 +214,10 @@
     </div>
   </header>
 
-  <!-- ---------- HERO ---------- -->
   <div class="hero">
     <div>
       <img src="wothimage.png" alt="War of the Heart" fetchpriority="high">
-      <!-- PODMIEŃ: gatunek, skąd jesteście, od kiedy gracie -->
-      <p class="lead">Ciężko, melodyjnie, bez kompromisów. Metal z Polski, od 2021 roku.</p>
+      <p class="lead">Ciężko, melodyjnie, bez kompromisów. Metal z Polski, od 2025 roku.</p>
       <div class="actions">
         <a class="btn primary" href="#muzyka">Posłuchaj</a>
         <a class="btn" href="#koncerty">Koncerty</a>
@@ -238,18 +225,15 @@
     </div>
   </div>
 
-  <!-- ---------- MUZYKA ---------- -->
   <section id="muzyka">
-    <div class="wrap">
+<!--     <div class="wrap">
       <h2>Muzyka</h2>
       <div class="two">
         <div>
-          <!-- PODMIEŃ: tytuł i opis najnowszego wydawnictwa -->
           <h3>Tytuł singla</h3>
           <p class="muted">Singiel, 2026</p>
           <p>Dwa zdania o tym, co to za kawałek: o czym jest, kiedy powstał, kto go nagrał i zmiksował. Krótko, bo ludzie i tak przede wszystkim klikną play.</p>
           <ul class="stream">
-            <!-- PODMIEŃ linki; usuń te, których nie używacie -->
             <li><a href="https://open.spotify.com/artist/XXXX">Spotify</a></li>
             <li><a href="https://waroftheheart.bandcamp.com">Bandcamp</a></li>
             <li><a href="https://music.apple.com/pl/artist/XXXX">Apple Music</a></li>
@@ -257,19 +241,16 @@
           </ul>
         </div>
         <div>
-          <!-- PODMIEŃ VIDEO_ID: to fragment po "v=" w adresie filmu na YouTube -->
           <iframe class="video" src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="War of the Heart – teledysk" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
         </div>
       </div>
-    </div>
+    </div> -->
   </section>
 
-  <!-- ---------- KONCERTY ---------- -->
   <section id="koncerty" class="dark">
-    <div class="wrap">
+<!--     <div class="wrap">
       <h2>Koncerty</h2>
 
-      <!-- PODMIEŃ: przykładowe daty. Kopiuj cały <li>, żeby dodać koncert. -->
       <ol class="shows">
         <li>
           <div class="date"><span class="day">17</span><span class="mon">paź</span></div>
@@ -296,40 +277,32 @@
           <a class="btn small" href="https://link-do-biletow.pl">Bilety</a>
         </li>
       </ol>
-
-      <!-- Jeśli nie macie zaplanowanych koncertów: usuń <ol class="shows"> powyżej i odkomentuj to:
-      <p class="noshows">Na razie nie mamy zaplanowanych koncertów. Nowe daty ogłaszamy najpierw na Instagramie.</p>
-      -->
-    </div>
+    </div> -->
   </section>
 
-  <!-- ---------- ZESPÓŁ ---------- -->
   <section id="zespol">
     <div class="wrap">
       <h2>Zespół</h2>
       <div class="two">
         <div>
-          <!-- PODMIEŃ: krótkie bio, 2–3 akapity maksymalnie -->
-          <p>War of the Heart powstał w 2021 roku z potrzeby grania rzeczy, których nie dało się zagrać nigdzie indziej. Trzy lata prób w piwnicy, kilkadziesiąt koncertów i pierwsze wydawnictwo później wciąż gramy tak, jak chcemy.</p>
-          <p>Inspiracje: od klasyki lat 90. po współczesny metal. Na koncertach najbardziej lubimy małe kluby, gdzie słychać każdą nutę i widać każdą twarz.</p>
+          <p>War of the Heart to pięcioosobowy zespół rockowo-metalowy, który powstał w 2026 roku. Od samego początku istnienia grupa stawia na tworzenie w pełni autorskiego materiału, w którym ciężkie, nośne gitary przeplatają się z przemyślaną sekcją rytmiczną i wyrazistymi tekstami. Muzyka zespołu to wypadkowa różnorodnych inspiracji każdego z członków, co pozwala na budowanie brzmienia zarówno surowego i energicznego, jak i pełnego melodyjnej przestrzeni.</p>
+          <p>Twórczość War of the Heart opiera się na trzech filarach: autentyczności przekazu, wysokiej energii wykonawczej oraz dbałości o przejrzystość aranżacji. Zespół unika schematów, dbając o to, by każdy utwór posiadał własny, unikalny charakter i niósł ze sobą ładunek emocjonalny.</p>
+          <p>Nacisk na czyste, selektywne brzmienie sprawia, że nawet najcięższe kompozycje zachowują klarowność i czytelność. Grupa konsekwentnie buduje swój repertuar, dążąc do jak najczęstszego konfrontowania swojej twórczości z publicznością podczas występów na żywo.</p>
         </div>
         <ul class="members">
-          <!-- PODMIEŃ: skład -->
-          <li><span class="name">Imię Nazwisko</span><br><span class="role">wokal</span></li>
-          <li><span class="name">Imię Nazwisko</span><br><span class="role">gitara</span></li>
-          <li><span class="name">Imię Nazwisko</span><br><span class="role">gitara</span></li>
-          <li><span class="name">Imię Nazwisko</span><br><span class="role">bas</span></li>
-          <li><span class="name">Imię Nazwisko</span><br><span class="role">perkusja</span></li>
+          <li><span class="name">Agata Kazimierczak</span><br><span class="role">wokal</span></li>
+          <li><span class="name">Władysław Grynow</span><br><span class="role">gitara</span></li>
+          <li><span class="name">Kamil Kieruzal</span><br><span class="role">gitara</span></li>
+          <li><span class="name">Kondrad Kosakiewicz</span><br><span class="role">bas</span></li>
+          <li><span class="name">Vitaliy Kardash</span><br><span class="role">perkusja</span></li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- ---------- GALERIA ---------- -->
   <section id="galeria" class="dark">
     <div class="wrap">
       <h2>Galeria</h2>
-      <!-- Wrzuć zdjęcia do folderu img/ w repo. Zdjęcia są automatycznie czarno-białe (CSS), więc nie muszą być spójne kolorystycznie. -->
       <div class="gallery">
         <img src="img/1.jpg" alt="War of the Heart na scenie" loading="lazy">
         <img src="img/2.jpg" alt="Koncert, widok z publiczności" loading="lazy">
@@ -339,22 +312,16 @@
     </div>
   </section>
 
-  <!-- ---------- KONTAKT ---------- -->
   <section id="kontakt">
     <div class="wrap">
       <h2>Kontakt</h2>
       <p class="muted">Booking, media, współpraca:</p>
-      <!-- PODMIEŃ: adres e-mail (możesz założyć skrzynkę w panelu OVH) -->
       <a class="mail" href="mailto:booking@waroftheheart.pl">booking@waroftheheart.pl</a>
 
       <ul class="social">
-        <!-- PODMIEŃ linki; usuń te, których nie używacie -->
         <li><a href="https://www.instagram.com/waroftheheart_band/">Instagram</a></li>
         <li><a href="https://www.facebook.com/profile.php?id=61593926853585">Facebook</a></li>
         <li><a href="https://www.tiktok.com/@war.of.the.heart">TikTok</a></li>
-        <li><a href="https://www.youtube.com/@waroftheheart">YouTube</a></li>
-        <li><a href="https://open.spotify.com/artist/XXXX">Spotify</a></li>
-        <li><a href="https://waroftheheart.bandcamp.com">Bandcamp</a></li>
       </ul>
     </div>
   </section>
