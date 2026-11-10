@@ -104,6 +104,9 @@
     video.hero-bg { filter: blur(3px); transform: scale(1.05); }
     /* gdy efekt WebGL działa, wideo jest tylko źródłem klatek */
     .hero.fx video.hero-bg { opacity: 0; }
+    /* canvas WebGL jest niewidoczny, dopóki nie narysuje pierwszej klatki – inaczej zasłoniłby poster czarnym prostokątem */
+    canvas.hero-bg { opacity: 0; transition: opacity .6s ease; }
+    .hero.fx canvas.hero-bg { opacity: 1; }
     .hero::after {
       content: "";
       position: absolute; inset: 0; z-index: -1;
@@ -223,7 +226,7 @@
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       .hero img { animation: none; }
-      .hero-bg { display: none; }
+      /* bez animacji: wideo nie jest ładowane, widać tylko poster */
       .social a:hover { padding-left: 0; }
     }
   </style>
@@ -248,7 +251,21 @@
   </header>
 
   <div class="hero">
-    <video class="hero-bg" src="iluzja_tlo.webm" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+    <video class="hero-bg" poster="iluzja_tlo_poster.webp" autoplay muted loop playsinline preload="none" aria-hidden="true"
+           data-lq="iluzja_tlo.webm" data-hq="iluzja_tlo_hq.webm"></video>
+    <script>
+    /* Wybór jakości tła: brak wideo / lżejsza wersja / HQ */
+    (function () {
+      var v = document.currentScript.previousElementSibling;
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) return; // sam poster
+      var c = navigator.connection || {};                                 // Chrome/Edge/Android; Safari i Firefox go nie mają
+      if (c.saveData || /(^|-)2g$/.test(c.effectiveType || '')) return;   // tryb oszczędzania danych lub bardzo słabe łącze → sam poster
+      var big = Math.max(innerWidth, innerHeight) >= 1200;                // duży ekran (desktop/laptop)
+      var slow = c.effectiveType === '3g' || (c.downlink && c.downlink < 5);
+      v.src = (big && !slow) ? v.dataset.hq : v.dataset.lq;
+      v.preload = 'auto';
+    })();
+    </script>
     <div>
       <img src="wothimage.png" alt="War of the Heart" fetchpriority="high">
       <p class="lead">Ciężko, melodyjnie, bez kompromisów. Metal z Polski, od 2026 roku.</p>
@@ -378,7 +395,7 @@
     if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     var hero = document.querySelector('.hero');
     var video = hero && hero.querySelector('video.hero-bg');
-    if (!video) return;
+    if (!video || !video.getAttribute('src')) return; // wideo nie zostało wybrane (sam poster) – efekt niepotrzebny
 
     var canvas = document.createElement('canvas');
     canvas.className = 'hero-bg';
