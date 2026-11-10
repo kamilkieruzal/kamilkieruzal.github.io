@@ -198,8 +198,9 @@
 
     .mail {
       font-family: var(--display); font-weight: 900;
-      font-size: clamp(2.2rem, 7vw, 4.6rem); line-height: 1;
-      text-transform: uppercase; text-decoration: none; word-break: break-all;
+      font-size: clamp(1rem, 6vw, 4.6rem); line-height: 1;
+      text-transform: uppercase; text-decoration: none; white-space: nowrap;
+      max-width: 100%;
       display: inline-block; margin-bottom: 2.5rem;
     }
     .mail:hover { color: var(--blood); }
@@ -344,7 +345,7 @@
     <div class="wrap">
       <h2>Kontakt</h2>
       <p class="muted">Booking, media, współpraca:</p>
-      <a class="mail" href="mailto:booking@waroftheheart.pl">waroftheheart.band@gmail.com</a>
+      <a class="mail" href="mailto:waroftheheart.band@gmail.com">waroftheheart.band@gmail.com</a>
 
       <ul class="social">
         <li><a href="https://www.youtube.com/@WaroftheH3art">YouTube</a></li>
