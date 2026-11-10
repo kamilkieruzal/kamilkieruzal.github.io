@@ -90,6 +90,21 @@
       display: grid; place-items: center; text-align: center;
       padding: 3rem 1.25rem;
       background: radial-gradient(ellipse 70% 55% at 50% 42%, #2b1114 0%, var(--ink) 70%);
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; z-index: -2;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+    }
+    .hero::after {
+      content: "";
+      position: absolute; inset: 0; z-index: -1;
+      pointer-events: none;
+      background: radial-gradient(ellipse 80% 70% at 50% 45%, rgba(10, 6, 7, .25) 0%, rgba(10, 6, 7, .8) 100%);
     }
     .hero img {
       width: min(720px, 92vw);
@@ -203,6 +218,7 @@
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       .hero img { animation: none; }
+      .hero-bg { display: none; }
       .social a:hover { padding-left: 0; }
     }
   </style>
@@ -227,6 +243,7 @@
   </header>
 
   <div class="hero">
+    <video class="hero-bg" src="iluzja_tlo.webm" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
     <div>
       <img src="wothimage.png" alt="War of the Heart" fetchpriority="high">
       <p class="lead">Ciężko, melodyjnie, bez kompromisów. Metal z Polski, od 2026 roku.</p>
