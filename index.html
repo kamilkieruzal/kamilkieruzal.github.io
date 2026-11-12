@@ -162,7 +162,7 @@
     .two { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
     @media (max-width: 760px) { .two { grid-template-columns: 1fr; gap: 2rem; } }
     .video { width: 100%; aspect-ratio: 16 / 9; border: 0; background: #000; }
-    .stream { list-style: none; padding: 0; margin: 1.4rem 0 0; display: flex; flex-wrap: wrap; gap: .5rem 1.6rem; }
+    .stream { list-style: none; padding: 0; margin: 1.4rem 0 0; display: flex; flex-direction: column; align-items: flex-start; gap: .9rem; }
     .stream a {
       font-family: var(--display); font-weight: 800; font-size: 1.35rem;
       text-transform: uppercase; letter-spacing: .04em; text-decoration: none;
@@ -171,12 +171,6 @@
     }
     .stream a img { width: 1.05em; height: 1.05em; flex: none; }
     .stream a:hover { color: var(--blood); }
-    /* telefon: wszystkie serwisy w jednej linii */
-    @media (max-width: 600px) {
-      .stream { flex-wrap: nowrap; justify-content: space-between; gap: .6rem; }
-      .stream li { white-space: nowrap; }
-      .stream a { font-size: clamp(.85rem, 4.1vw, 1.35rem); letter-spacing: .02em; gap: .35em; }
-    }
 
     .shows { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rust); }
     .shows li {
