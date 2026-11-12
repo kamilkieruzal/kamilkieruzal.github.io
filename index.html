@@ -170,6 +170,16 @@
       display: inline-flex; align-items: center; gap: .45em;
     }
     .stream a img { width: 1.05em; height: 1.05em; flex: none; }
+    /* klip pod listą (wąski ekran): serwisy od lewej do prawej */
+    @media (max-width: 760px) {
+      .stream { flex-direction: row; flex-wrap: wrap; align-items: center; gap: .5rem 1.6rem; }
+    }
+    /* telefon: wszystkie serwisy w jednej linii */
+    @media (max-width: 600px) {
+      .stream { flex-wrap: nowrap; justify-content: space-between; gap: .6rem; }
+      .stream li { white-space: nowrap; }
+      .stream a { font-size: clamp(.85rem, 4.1vw, 1.35rem); letter-spacing: .02em; gap: .35em; }
+    }
     .stream a:hover { color: var(--blood); }
 
     .shows { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rust); }
