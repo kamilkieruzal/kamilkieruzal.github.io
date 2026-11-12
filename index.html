@@ -161,6 +161,12 @@
 
     .two { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
     @media (max-width: 760px) { .two { grid-template-columns: 1fr; gap: 2rem; } }
+    /* PC: tekst singla wyrównany do klipu – tytuł przy górnej krawędzi, linki przy dolnej */
+    @media (min-width: 761px) {
+      .two.music { align-items: stretch; }
+      .two.music > div:first-child { display: flex; flex-direction: column; }
+      .two.music .stream { margin-top: auto; }
+    }
 
     .video { width: 100%; aspect-ratio: 16 / 9; border: 0; background: #000; }
     .stream { list-style: none; padding: 0; margin: 1.4rem 0 0; display: flex; flex-wrap: wrap; gap: .5rem 1.6rem; }
@@ -168,13 +174,15 @@
       font-family: var(--display); font-weight: 800; font-size: 1.35rem;
       text-transform: uppercase; letter-spacing: .04em; text-decoration: none;
       border-bottom: 3px solid var(--blood); padding-bottom: .1rem;
+      display: inline-flex; align-items: center; gap: .45em;
     }
+    .stream a img { width: 1.05em; height: 1.05em; flex: none; }
     .stream a:hover { color: var(--blood); }
     /* telefon: wszystkie serwisy w jednej linii */
     @media (max-width: 600px) {
-      .stream { flex-wrap: nowrap; justify-content: space-between; gap: .8rem; }
+      .stream { flex-wrap: nowrap; justify-content: space-between; gap: .6rem; }
       .stream li { white-space: nowrap; }
-      .stream a { font-size: clamp(.95rem, 4.6vw, 1.35rem); letter-spacing: .02em; }
+      .stream a { font-size: clamp(.85rem, 4.1vw, 1.35rem); letter-spacing: .02em; gap: .35em; }
     }
 
     .shows { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rust); }
@@ -327,15 +335,15 @@
   <section id="muzyka">
     <div class="wrap">
       <h2>Muzyka</h2>
-      <div class="two">
+      <div class="two music">
         <div>
           <h3>Iluzja</h3>
           <p class="muted">Singiel, 2026</p>
           <!-- <p>Dwa zdania o kawałku: o czym jest, kiedy powstał, kto go nagrał i zmiksował.</p> -->
           <ul class="stream">
-            <li><a href="https://open.spotify.com/track/4m9QuIs8auKggLbkenSzmj" target="_blank" rel="noopener">Spotify</a></li>
-            <li><a href="https://music.youtube.com/watch?v=zwGDoY9Txpk" target="_blank" rel="noopener">YouTube Music</a></li>
-            <li><a href="https://music.apple.com/pl/album/iluzja-single/6833368150" target="_blank" rel="noopener">Apple Music</a></li>
+            <li><a href="https://open.spotify.com/track/4m9QuIs8auKggLbkenSzmj" target="_blank" rel="noopener"><img src="https://cdn.simpleicons.org/spotify/1DB954" alt="" width="20" height="20" loading="lazy">Spotify</a></li>
+            <li><a href="https://music.youtube.com/watch?v=zwGDoY9Txpk" target="_blank" rel="noopener"><img src="https://cdn.simpleicons.org/youtubemusic/FF0000" alt="" width="20" height="20" loading="lazy">YouTube Music</a></li>
+            <li><a href="https://music.apple.com/pl/album/iluzja-single/6833368150" target="_blank" rel="noopener"><img src="https://cdn.simpleicons.org/applemusic/FA243C" alt="" width="20" height="20" loading="lazy">Apple Music</a></li>
           </ul>
         </div>
         <div>
