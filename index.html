@@ -162,7 +162,9 @@
     .two { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
     @media (max-width: 760px) { .two { grid-template-columns: 1fr; gap: 2rem; } }
     .video { width: 100%; aspect-ratio: 16 / 9; border: 0; background: #000; }
-    .stream { list-style: none; padding: 0; margin: 1.4rem 0 0; display: flex; flex-direction: column; align-items: flex-start; gap: .9rem; }
+    .stream { list-style: none; padding: 0; margin: 1.4rem 0 0; display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1.6rem; }
+    /* klip pod listą serwisów, na całą szerokość */
+    .music-video { margin-top: 1.4rem; }
     .stream a {
       font-family: var(--display); font-weight: 800; font-size: 1.35rem;
       text-transform: uppercase; letter-spacing: .04em; text-decoration: none;
@@ -170,10 +172,6 @@
       display: inline-flex; align-items: center; gap: .45em;
     }
     .stream a img { width: 1.05em; height: 1.05em; flex: none; }
-    /* klip pod listą (wąski ekran): serwisy od lewej do prawej */
-    @media (max-width: 760px) {
-      .stream { flex-direction: row; flex-wrap: wrap; align-items: center; gap: .5rem 1.6rem; }
-    }
     /* telefon: wszystkie serwisy w jednej linii */
     @media (max-width: 600px) {
       .stream { flex-wrap: nowrap; justify-content: space-between; gap: .6rem; }
@@ -332,20 +330,20 @@
   <section id="muzyka">
     <div class="wrap">
       <h2>Muzyka</h2>
-      <div class="two">
+      <div>
         <div>
           <h3>Iluzja</h3>
           <p class="muted">Singiel, 2026</p>
           <!-- <p>Dwa zdania o kawałku: o czym jest, kiedy powstał, kto go nagrał i zmiksował.</p> -->
-          <ul class="stream">
-            <li><a href="https://open.spotify.com/track/4m9QuIs8auKggLbkenSzmj" target="_blank" rel="noopener"><img src="https://cdn.simpleicons.org/spotify/1DB954" alt="" width="20" height="20" loading="lazy">Spotify</a></li>
-            <li><a href="https://music.youtube.com/watch?v=zwGDoY9Txpk" target="_blank" rel="noopener"><img src="https://cdn.simpleicons.org/youtubemusic/FF0000" alt="" width="20" height="20" loading="lazy">YouTube Music</a></li>
-            <li><a href="https://music.apple.com/pl/album/iluzja-single/6833368150" target="_blank" rel="noopener"><img src="https://cdn.simpleicons.org/applemusic/FA243C" alt="" width="20" height="20" loading="lazy">Apple Music</a></li>
-          </ul>
         </div>
-        <div>
+        <div class="music-video">
           <iframe class="video" src="https://www.youtube-nocookie.com/embed/zwGDoY9Txpk?rel=0" title="War of the Heart – Iluzja" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
         </div>
+        <ul class="stream">
+          <li><a href="https://open.spotify.com/track/4m9QuIs8auKggLbkenSzmj" target="_blank" rel="noopener"><img src="https://cdn.simpleicons.org/spotify/1DB954" alt="" width="20" height="20" loading="lazy">Spotify</a></li>
+          <li><a href="https://music.youtube.com/watch?v=zwGDoY9Txpk" target="_blank" rel="noopener"><img src="https://cdn.simpleicons.org/youtubemusic/FF0000" alt="" width="20" height="20" loading="lazy">YouTube Music</a></li>
+          <li><a href="https://music.apple.com/pl/album/iluzja-single/6833368150" target="_blank" rel="noopener"><img src="https://cdn.simpleicons.org/applemusic/FA243C" alt="" width="20" height="20" loading="lazy">Apple Music</a></li>
+        </ul>
       </div>
     </div>
   </section>
