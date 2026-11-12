@@ -161,13 +161,6 @@
 
     .two { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
     @media (max-width: 760px) { .two { grid-template-columns: 1fr; gap: 2rem; } }
-    /* PC: tekst singla wyrównany do klipu – tytuł przy górnej krawędzi, linki przy dolnej */
-    @media (min-width: 761px) {
-      .two.music { align-items: stretch; }
-      .two.music > div:first-child { display: flex; flex-direction: column; }
-      .two.music .stream { margin-top: auto; }
-    }
-
     .video { width: 100%; aspect-ratio: 16 / 9; border: 0; background: #000; }
     .stream { list-style: none; padding: 0; margin: 1.4rem 0 0; display: flex; flex-wrap: wrap; gap: .5rem 1.6rem; }
     .stream a {
@@ -335,7 +328,7 @@
   <section id="muzyka">
     <div class="wrap">
       <h2>Muzyka</h2>
-      <div class="two music">
+      <div class="two">
         <div>
           <h3>Iluzja</h3>
           <p class="muted">Singiel, 2026</p>
